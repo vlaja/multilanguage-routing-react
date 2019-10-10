@@ -1,0 +1,13 @@
+{
+  "tabWidth": 4,
+  "singleQuote": true,
+  "prettier.jsxBracketSameLine": true,
+  "overrides": [
+    {
+      "files": ["*.tsx", "*.ts", "*.json", "*.yml"],
+      "options": {
+        "tabWidth": 2
+      }
+    }
+  ]
+}

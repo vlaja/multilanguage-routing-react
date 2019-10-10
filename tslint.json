@@ -1,0 +1,48 @@
+{
+  "extends": ["tslint:recommended", "tslint-react"],
+  "linterOptions": {
+    "exclude": ["config/**/*.js", "node_modules/**/*.ts"]
+  },
+  "rules": {
+    "interface-name": [true, "never-prefix"],
+    "eofline": false,
+    "member-access": false,
+    "object-literal-sort-keys": false,
+    "semicolon": [true, "always", "ignore-bound-class-methods"],
+    "trailing-comma": false,
+    "quotemark": [true, "single", "avoid-escape", "jsx-double"],
+    "no-var-requires": false,
+    "no-trailing-whitespace": false,
+    "object-literal-key-quotes": false,
+    "jsx-no-lambda": true,
+    "jsx-boolean-value": false,
+    "jsx-no-multiline-js": false,
+    "jsx-wrap-multiline": false,
+    "one-variable-per-declaration": false,
+    "ordered-imports": [
+      true,
+      {
+        "module-source-path": "full",
+        "import-sources-order": "any",
+        "named-imports-order": "any",
+        "grouped-imports": "true"
+      }
+    ],
+    "arrow-parens": false,
+    "no-console": false,
+    "radix": false,
+    "max-line-length": false,
+    "switch-default": true,
+    "typedef": [true, "parameter", "property-declaration"],
+    "typedef-whitespace": [
+      true,
+      {
+        "index-signature": "nospace",
+        "parameter": "nospace",
+        "property-declaration": "nospace",
+        "variable-declaration": "nospace"
+      }
+    ],
+    "jsx-alignment": false
+  }
+}
