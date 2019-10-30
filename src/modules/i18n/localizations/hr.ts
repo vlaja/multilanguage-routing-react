@@ -18,6 +18,7 @@ export const hr: LanguageStrings = {
     'Ova stranice je otišla na godišnji odmor. Pokušajte ponovo kasnije.',
 
   /** Links */
-  'links.medium': 'to be added',
-  'links.dev.to': 'to be added'
+  'links.medium':
+    'https://medium.com/prototyped/multi-language-routing-in-react-d7eb7a0688e9',
+  'links.dev.to': 'https://dev.to/prototyp/multi-language-routing-in-react-k9l'
 };

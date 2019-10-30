@@ -19,6 +19,7 @@ export const de: LanguageStrings = {
     'Diese Seite hat sich für einen Urlaub entschieden. Versuchen Sie es später noch einmal.',
 
   /** Links */
-  'links.medium': 'to be added',
-  'links.dev.to': 'to be added'
+  'links.medium':
+    'https://medium.com/prototyped/multi-language-routing-in-react-d7eb7a0688e9',
+  'links.dev.to': 'https://dev.to/prototyp/multi-language-routing-in-react-k9l'
 };
