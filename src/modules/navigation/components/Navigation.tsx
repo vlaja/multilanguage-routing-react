@@ -8,9 +8,13 @@ import { list, link } from 'theme';
 export const Navigation: React.FC = () => {
   const { formatMessage, locale } = useIntl();
 
+  function localizeRouteKey(path: string) {
+    return `/${locale}` + formatMessage({ id: path });
+  }
+
   return (
     <ul className={css(list.container)}>
-      {Object.keys(AppRoute).map(elem => (
+      {Object.keys(AppRoute).map((elem) => (
         <li key={elem} className={css(list.item)}>
           <NavLink
             exact
@@ -24,8 +28,4 @@ export const Navigation: React.FC = () => {
       ))}
     </ul>
   );
-
-  function localizeRouteKey(path: string) {
-    return `/${locale}` + formatMessage({ id: path });
-  }
 };
