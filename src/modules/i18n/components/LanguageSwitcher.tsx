@@ -11,22 +11,6 @@ export const LanguageSwitcher: React.FC = () => {
   const { pathname } = useLocation();
   const { messages } = useIntl();
 
-  return (
-    <ul className={css(list.container)}>
-      {Object.keys(AppLanguage).map(lang => (
-        <li key={lang} className={css(list.item)}>
-          <NavLink
-            className={css(link.primary)}
-            activeClassName={css(link.active)}
-            to={getMatchingRoute(AppLanguage[lang])}
-          >
-            {AppLanguage[lang]}
-          </NavLink>
-        </li>
-      ))}
-    </ul>
-  );
-
   function getMatchingRoute(language: string) {
     /**
      * Get the key of the route the user is currently on
@@ -44,4 +28,20 @@ export const LanguageSwitcher: React.FC = () => {
      */
     return `/${language}` + matchingRoute;
   }
+
+  return (
+    <ul className={css(list.container)}>
+      {Object.keys(AppLanguage).map((lang) => (
+        <li key={lang} className={css(list.item)}>
+          <NavLink
+            className={css(link.primary)}
+            activeClassName={css(link.active)}
+            to={getMatchingRoute(AppLanguage[lang])}
+          >
+            {AppLanguage[lang]}
+          </NavLink>
+        </li>
+      ))}
+    </ul>
+  );
 };
