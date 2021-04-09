@@ -16,10 +16,10 @@ export const LocalizedRouter: React.FC<Props> = ({
   children,
   RouterComponent,
   appStrings,
-  defaultLanguage
+  defaultLanguage,
 }) => (
   <RouterComponent>
-    <Route path="/:lang([a-z]{2})">
+    <Route path="/:lang([a-zA-Z]{2})">
       {({ match, location }) => {
         /**
          * Get current language

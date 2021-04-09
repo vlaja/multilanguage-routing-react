@@ -9,23 +9,6 @@ export const LocalizedSwitch: React.FC = ({ children }) => {
   const { formatMessage, locale } = useIntl();
 
   /**
-   * Apply localization to all routes
-   * Also checks if all children elements are <Route /> components
-   */
-  return (
-    <Switch>
-      {React.Children.map(children, child =>
-        React.isValidElement<RouteProps>(child)
-          ? React.cloneElement(child, {
-              ...child.props,
-              path: localizeRoutePath(child.props.path)
-            })
-          : child
-      )}
-    </Switch>
-  );
-
-  /**
    *
    * @param path can be string, undefined or string array
    * @returns Localized string path or path array
@@ -35,7 +18,7 @@ export const LocalizedSwitch: React.FC = ({ children }) => {
       case 'undefined':
         return undefined;
       case 'object':
-        return path.map(key => `/${locale}` + formatMessage({ id: key }));
+        return path.map((key) => `/${locale}` + formatMessage({ id: key }));
       default:
         const isFallbackRoute = path === '*';
         return isFallbackRoute
@@ -43,4 +26,21 @@ export const LocalizedSwitch: React.FC = ({ children }) => {
           : `/${locale}` + formatMessage({ id: path });
     }
   }
+
+  /**
+   * Apply localization to all routes
+   * Also checks if all children elements are <Route /> components
+   */
+  return (
+    <Switch>
+      {React.Children.map(children, (child) =>
+        React.isValidElement<RouteProps>(child)
+          ? React.cloneElement(child, {
+              ...child.props,
+              path: localizeRoutePath(child.props.path),
+            })
+          : child
+      )}
+    </Switch>
+  );
 };
