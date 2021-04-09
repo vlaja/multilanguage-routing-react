@@ -9,16 +9,14 @@ import { appStrings } from '..';
 
 export const LanguageSwitcher: React.FC = () => {
   const { pathname } = useLocation();
-  const { locale, messages } = useIntl();
+  const { messages } = useIntl();
 
   function getMatchingRoute(language: string) {
     /**
      * Get the key of the route the user is currently on
      */
-    const [, route] = pathname.split(locale);
-    const routeKey = Object.keys(messages).find(
-      (key) => messages[key] === route
-    );
+    const route = pathname.substring(3); // remove local part '/en' from the pathname /en/contact
+    const routeKey = Object.keys(messages).find(key => messages[key] === route);
 
     /**
      * Find the matching route for the new language
